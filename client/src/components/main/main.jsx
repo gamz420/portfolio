@@ -4,7 +4,7 @@ import "./style.css";
 
 export default function Main() {
   useEffect(() => {
-    fetch("http://localhost:3001", {
+    fetch("https://gamzaliev.herokuapp.com", {
       credentials: "include",
     });
   }, []);

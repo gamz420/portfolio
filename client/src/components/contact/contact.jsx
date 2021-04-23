@@ -45,7 +45,7 @@ export default function Contact() {
   const handleGetMessage = async (e) => {
     e.preventDefault();
     if (e.target.from.value && e.target.message.value) {
-      fetch("http://localhost:3001/message", {
+      fetch("https://gamzaliev.herokuapp.com/message", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
