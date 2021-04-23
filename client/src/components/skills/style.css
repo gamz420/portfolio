@@ -1,0 +1,41 @@
+/*Skills*/
+
+.skills {
+  margin-top: 90px;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+  color: black;
+}
+
+.skills > div {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 90%;
+}
+
+.skills > div div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.skills > div div img {
+  width: 60%;
+  filter: drop-shadow(0 0 1px black);
+}
+
+.front {
+  border-right: solid 3px black;
+}

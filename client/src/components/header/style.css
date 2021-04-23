@@ -1,0 +1,15 @@
+.header-wraper {
+  position: relative;
+  background: url(../../img/home-banner-WebDevelopment.jpg) no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  height: 90vh;
+}
+
+.header-wraper2 {
+  position: relative;
+  background: url(../../img/69127555-keyboard-wallpapers.jpg);
+  background-size: cover;
+  background-position: top;
+  height: 90vh;
+}

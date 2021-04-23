@@ -1,0 +1,36 @@
+.aboutme {
+  margin-top: 90px;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+  height: calc(100% - 90px);
+}
+
+.aboutme > div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  font-family: "Roboto Condensed" sans-serif;
+  width: 90vw;
+  height: 80vh;
+  color: white;
+  background: rgba(0, 0, 0, 0.781);
+  text-shadow: 0px 0px 10px black;
+  font-size: large;
+}
+
+.info-text {
+  width: 50%;
+}
+
+.aboutme img {
+  width: 20vw;
+}

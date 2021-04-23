@@ -1,0 +1,45 @@
+/*Navbar*/
+
+nav {
+  z-index: 2;
+}
+
+.logo {
+  width: 130px;
+}
+
+.navbar-custom {
+  background-color: black;
+}
+
+/*Menu Links*/
+
+nav a.nav-link {
+  letter-spacing: 0.6px;
+  cursor: pointer;
+}
+
+nav ul li {
+  text-transform: uppercase;
+}
+
+.navbar-nav > li > a {
+  margin-right: 12px;
+  margin-left: 12px;
+  color: var(--primary-white) !important;
+  border-top: 3px solid var(--primary-dark);
+}
+
+.navbar-brand {
+  max-width: 17.25rem;
+  padding: 0 !important;
+}
+
+.navbar-nav > li > a.active,
+.navbar-nav > li > a.active:focus {
+  border-top: 3px solid var(--primary-white);
+}
+
+.navbar-nav > li > a:hover {
+  border-top: 3px solid var(--primary-white);
+}

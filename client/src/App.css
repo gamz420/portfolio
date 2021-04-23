@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
+
+:root {
+  --primary-white: white;
+  --primary-orange: #f9ab00;
+  --primary-dark: rgba(255, 255, 255, 0);
+  --primary-red: #ef4035;
+  --primary-hover-red: #f33501;
+}
+
+body {
+  font-family: "Roboto Condensed" sans-serif;
+}
+
+
+
+@media (max-width: 768px) {
+  .main-info h1 {
+    font-size: 27px !important;
+  }
+  .typed-text {
+    font-size: 23px !important;
+  }
+}
+
+/*TYPED TEXT*/
+
+.typed-text {
+  font-size: 2rem;
+  color: white;
+}
+
+.tsparticles-canvas-el {
+  position: absolute;
+  height: 100hv;
+  width: 100vw;
+  z-index: 1;
+}
+
+

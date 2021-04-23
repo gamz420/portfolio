@@ -1,0 +1,36 @@
+.main-info {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "Roboto Condensed" sans-serif;
+  z-index: 1;
+}
+
+.main-info h1 {
+  color: white;
+  text-transform: uppercase;
+}
+
+/*Header button*/
+.btn-main-offer {
+  border: 1px solid white;
+  text-transform: uppercase;
+  border-radius: 0;
+  padding: 12px 12px 12px 12px;
+  color: var(--primary-white);
+  margin: 2rem;
+}
+
+.btn-main-offer:hover {
+  text-decoration: none;
+  background-color: white;
+  color: black;
+  transition: 0.3s ease-in-out;
+}
