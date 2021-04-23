@@ -1,4 +1,28 @@
 {
+  "name": "PORTFOLIO",
+  "version": "1.0.0",
+  "description": "Всем привет!",
+  "main": "index.js",
+  "engines": {
+    "node": "14.x",
+    "yarn": "1.22.10"
+  },
+  "scripts": {
+    "start": "cd ./server && npm i && node app.js",
+    "heroku-postbuild": "cd ./client && yarn && yarn run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gamz420/portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gamz420/portfolio/issues"
+  },
+  "homepage": "https://github.com/gamz420/portfolio#readme",
   "dependencies": {
     "redux-devtools-extension": "^2.13.9"
   }
