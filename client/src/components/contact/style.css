@@ -55,6 +55,12 @@
 .text-information {
   margin-bottom: 0px;
   font-size: 180%;
+  color: white;
+}
+
+a:hover {
+  text-decoration: none;
+  color: gray;
 }
 
 .icon {

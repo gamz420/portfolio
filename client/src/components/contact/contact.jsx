@@ -21,21 +21,25 @@ let list = [
     first: "Github:",
     second: "github.com/gamz420",
     src: "img/github_PNG83.png",
+    link: "https://github.com/gamz420",
   },
   {
     first: "Linkedin:",
-    second: "linkedin.com/in/gamzali-gamzaliev-1361a2210/",
+    second: "linkedin.com/in/gamzali-gamzaliev-1361a2210",
     src: "img/linkedin.png",
+    link: "https://linkedin.com/in/gamzali-gamzaliev-1361a2210",
   },
   {
     first: "Facebook:",
     second: "facebook.com/gamzat.gamzaliev420",
     src: "img/facebook.png",
+    link: "https://facebook.com/gamzat.gamzaliev420",
   },
   {
     first: "Telegram:",
     second: "@gamzalievgamz",
     src: "img/telegram.png",
+    link: "https://t.me/gamzalievgamz",
   },
 ];
 
@@ -75,7 +79,14 @@ export default function Contact() {
               </div>
               <div className="text">
                 <p className="text-header"> {e.first} </p>
-                <p className="text-information"> {e.second} </p>
+                {!e.link ? (
+                  <p className="text-information"> {e.second} </p>
+                ) : (
+                  <a href={e.link} className="text-information">
+                    {" "}
+                    {e.second}{" "}
+                  </a>
+                )}
               </div>
             </div>
           ))}
