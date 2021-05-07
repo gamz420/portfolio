@@ -4,7 +4,7 @@ import "./style.css";
 
 export default function Main() {
   useEffect(() => {
-    fetch("/", {
+    fetch("/check", {
       credentials: "include",
     });
   }, []);

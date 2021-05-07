@@ -22,9 +22,6 @@ const bot = new Telegraf(process.env.BOT_TOKEN);
 const root = path.join(__dirname, "../", "client", "build");
 
 app.use(express.static(root));
-app.get("*", (req, res) => {
-  res.sendFile("index.html", { root });
-});
 
 bot.use(async (ctx, next) => {
   try {
@@ -38,17 +35,33 @@ bot.start(async (ctx) => {
   ctx.reply("Система запущена");
 });
 
-app.get("/", (req, res) => {
-  bot.telegram.sendMessage(process.env.BOT_ID, "Ваш сайт посетили");
-  res.sendStatus(200);
+app.get("/check", (req, res) => {
+  try {
+    bot.telegram.sendMessage(process.env.BOT_ID, "Ваш сайт посетили");
+    res.sendStatus(200);
+  } catch {
+    res.sendStatus(500);
+  }
 });
 
 app.post("/message", (req, res) => {
-  bot.telegram.sendMessage(
-    process.env.BOT_ID,
-    `Сообщение! \n От: ${req.body.from} \n ${req.body.message}`
-  );
-  res.sendStatus(200);
+  if (req.body.from && req.body.message) {
+    try {
+      bot.telegram.sendMessage(
+        process.env.BOT_ID,
+        `Сообщение! \n От: ${req.body.from} \n ${req.body.message}`
+      );
+      res.sendStatus(200);
+    } catch {
+      res.sendStatus(500);
+    }
+  } else {
+    res.sendStatus(400);
+  }
+});
+
+app.get("*", (req, res) => {
+  res.sendFile("index.html", { root });
 });
 
 app.listen(process.env.PORT, () => {
