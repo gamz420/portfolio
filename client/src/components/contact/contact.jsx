@@ -82,7 +82,7 @@ export default function Contact() {
                 {!e.link ? (
                   <p className="text-information"> {e.second} </p>
                 ) : (
-                  <a href={e.link} className="text-information">
+                  <a href={e.link} className="text-information" target="_blank">
                     {" "}
                     {e.second}{" "}
                   </a>
