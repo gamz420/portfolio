@@ -8,25 +8,8 @@
   --primary-hover-red: #f33501;
 }
 
-@media (max-width: 768px) {
-  .main-info h1 {
-    font-size: 27px !important;
-  }
-  .typed-text {
-    font-size: 23px !important;
-  }
-}
-
-/*TYPED TEXT*/
-
-.typed-text {
-  font-size: 2rem;
-  color: white;
-}
-
 .tsparticles-canvas-el {
+  padding-top: 85px;
   position: absolute;
-  height: 100vh;
-  width: 100vw;
   z-index: 1;
 }

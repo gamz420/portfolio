@@ -1,7 +1,7 @@
 .main-info {
   display: flex;
   position: absolute;
-  top: 0;
+  top: 85px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -16,16 +16,28 @@
 .main-info h1 {
   color: white;
   text-transform: uppercase;
+  margin-bottom: 1%;
+  font-size: calc(20px + (30 - 20) * ((100vw - 320px) / (1200 - 320)));
+}
+
+/*TYPED TEXT*/
+
+.typed-text {
+  font-size: calc(20px + (26 - 20) * ((100vw - 320px) / (1200 - 320)));
+  color: white;
 }
 
 /*Header button*/
+
 .btn-main-offer {
+  font-size: calc(
+    13px + (22 - 20) * ((100vw - 320px) / (1200 - 320))
+  ) !important;
   border: 1px solid white;
   text-transform: uppercase;
-  border-radius: 0;
-  padding: 12px 12px 12px 12px;
+  padding: calc(5px + (25 - 20) * ((100vw - 320px) / (1200 - 320)));
   color: var(--primary-white);
-  margin: 2rem;
+  margin: calc(10px + (30 - 20) * ((100vw - 320px) / (1200 - 320)));
 }
 
 .btn-main-offer:hover {
