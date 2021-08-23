@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "cd ./server && npm i && node app.js",
-    "heroku-postbuild": "cd ./client && yarn && yarn run build",
+    "heroku-postbuild": "cd ./client && npm i && yarn run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
