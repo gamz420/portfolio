@@ -38,11 +38,11 @@
   padding: calc(5px + (25 - 20) * ((100vw - 320px) / (1200 - 320)));
   color: var(--primary-white);
   margin: calc(10px + (30 - 20) * ((100vw - 320px) / (1200 - 320)));
+  transition: 0.3s;
 }
 
 .btn-main-offer:hover {
   text-decoration: none;
   background-color: white;
   color: black;
-  transition: 0.3s ease-in-out;
 }

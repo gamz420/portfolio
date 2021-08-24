@@ -17,6 +17,7 @@ nav {
 nav a.nav-link {
   letter-spacing: 0.6px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 nav ul li {

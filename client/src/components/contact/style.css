@@ -58,6 +58,10 @@
   color: white;
 }
 
+a {
+  transition: 0.3s;
+}
+
 a:hover {
   text-decoration: none;
   color: gray;
@@ -128,13 +132,13 @@ a:hover {
   padding: 12px 12px 12px 12px;
   color: white;
   margin: 2rem;
+  transition: 0.3s;
 }
 
 .button-form:hover {
   text-decoration: none;
   background-color: white;
   color: black;
-  transition: 0.3s ease-in-out;
 }
 
 .label-form {
