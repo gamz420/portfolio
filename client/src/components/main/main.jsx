@@ -3,7 +3,6 @@ import Typed from "react-typed";
 import "./style.css";
 
 export default function Main() {
-  console.log("main");
   useEffect(() => {
     fetch("/check", {
       credentials: "include",

@@ -11,7 +11,6 @@ import Skills from "./components/skills/skills";
 import Contact from "./components/contact/contact";
 
 function App() {
-  console.log("App");
   return (
     <div className="App">
       <Particles

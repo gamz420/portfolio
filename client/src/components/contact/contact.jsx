@@ -44,7 +44,6 @@ let list = [
 ];
 
 export default function Contact() {
-  console.log("contact");
   const [status, setStatus] = useState("");
 
   const handleGetMessage = async (e) => {

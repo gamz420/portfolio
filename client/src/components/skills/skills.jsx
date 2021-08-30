@@ -4,7 +4,6 @@ import { change } from "../../redux/action/changeImg";
 import "./style.css";
 
 export default function Skills() {
-  console.log("skills");
   const dispatch = useDispatch();
 
   useEffect(() => {
