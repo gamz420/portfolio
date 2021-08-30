@@ -44,6 +44,7 @@ let list = [
 ];
 
 export default function Contact() {
+  console.log("contact");
   const [status, setStatus] = useState("");
 
   const handleGetMessage = async (e) => {
@@ -73,7 +74,7 @@ export default function Contact() {
       <div className="contacts-info">
         <div className="contacts-div">
           {list.map((e) => (
-            <div className="item">
+            <div key={e.second} className="item">
               <div className="img-div">
                 <img className="icon" src={e.src} alt={e.first} />
               </div>

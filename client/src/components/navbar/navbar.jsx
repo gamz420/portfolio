@@ -5,6 +5,8 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import "./style.css";
 
 function Navbar() {
+  console.log("navbar");
+
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-custom">

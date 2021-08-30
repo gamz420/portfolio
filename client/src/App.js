@@ -1,3 +1,4 @@
+import React from "react";
 import "./App.css";
 import Navbar from "./components/navbar/navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -10,6 +11,7 @@ import Skills from "./components/skills/skills";
 import Contact from "./components/contact/contact";
 
 function App() {
+  console.log("App");
   return (
     <div className="App">
       <Particles
