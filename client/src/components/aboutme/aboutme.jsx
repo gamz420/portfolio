@@ -3,7 +3,7 @@ import "./style.css";
 
 function Aboutme() {
   useEffect(() => {
-    fetch("/aboutme", {
+    fetch("/checkaboutme", {
       credentials: "include",
     });
   }, []);

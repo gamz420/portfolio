@@ -67,7 +67,7 @@ export default function Contact() {
   const [status, setStatus] = useState("");
 
   useEffect(() => {
-    fetch("/contact", {
+    fetch("/checkcontact", {
       credentials: "include",
     });
   }, []);

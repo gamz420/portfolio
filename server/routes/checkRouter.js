@@ -26,7 +26,7 @@ router.get("/buttoncontact", (req, res) => {
   }
 });
 
-router.get("/aboutme", (req, res) => {
+router.get("/checkaboutme", (req, res) => {
   try {
     bot.telegram.sendMessage(process.env.BOT_ID, "Перешли в 'Обо мне'");
     res.sendStatus(200);
@@ -44,7 +44,7 @@ router.get("/downloadresume", (req, res) => {
   }
 });
 
-router.get("/skills", (req, res) => {
+router.get("/checkskills", (req, res) => {
   try {
     bot.telegram.sendMessage(process.env.BOT_ID, "Перешли в 'Технологии'");
     res.sendStatus(200);
@@ -53,7 +53,7 @@ router.get("/skills", (req, res) => {
   }
 });
 
-router.get("/contact", (req, res) => {
+router.get("/checkcontact", (req, res) => {
   try {
     bot.telegram.sendMessage(process.env.BOT_ID, "Перешли в 'Контакты'");
     res.sendStatus(200);

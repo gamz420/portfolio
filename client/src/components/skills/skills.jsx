@@ -8,7 +8,7 @@ export default function Skills() {
 
   useEffect(() => {
     dispatch(change("header-wraper2"));
-    fetch("/skills", {
+    fetch("/checkskills", {
       credentials: "include",
     });
   }, []);
