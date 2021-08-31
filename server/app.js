@@ -38,13 +38,9 @@ bot.start(async (ctx) => {
   ctx.reply("Система запущена");
 });
 
-app.get("*", (req, res) => {
-  res.sendFile("index.html", { root });
-});
-
 app.listen(process.env.PORT, () => {
   console.log("Server App");
   bot.launch();
 });
 
-module.exports = bot;
+module.exports = { bot, root };
