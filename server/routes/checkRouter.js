@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const { Telegraf } = require("telegraf");
-const root = require("../app");
 require("dotenv").config();
 
 const bot = new Telegraf(process.env.BOT_TOKEN);
@@ -112,10 +111,6 @@ router.post("/message", (req, res) => {
   } else {
     res.sendStatus(400);
   }
-});
-
-router.get("*", (req, res) => {
-  res.sendFile("index.html", { root });
 });
 
 module.exports = router;
