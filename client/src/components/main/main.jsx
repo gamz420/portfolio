@@ -8,6 +8,13 @@ export default function Main() {
       credentials: "include",
     });
   }, []);
+
+  const handleEvent = () => {
+    fetch("/buttoncontact", {
+      credentials: "include",
+    });
+  };
+
   return (
     <div>
       <div className="main-info">
@@ -19,7 +26,7 @@ export default function Main() {
           backSpeed={60}
           loop
         />
-        <a href="/contact" className="btn-main-offer">
+        <a onClick={handleEvent} href="/contact" className="btn-main-offer">
           Связаться со мной
         </a>
       </div>

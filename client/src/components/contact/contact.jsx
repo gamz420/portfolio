@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./style.css";
 
 let list = [
@@ -22,29 +22,55 @@ let list = [
     second: "github.com/gamz420",
     src: "img/github_PNG83.png",
     link: "https://github.com/gamz420",
+    req: () => {
+      fetch("/github", {
+        credentials: "include",
+      });
+    },
   },
   {
     first: "Linkedin:",
     second: "linkedin.com/in/gamzali-gamzaliev-1361a2210",
     src: "img/linkedin.png",
     link: "https://linkedin.com/in/gamzali-gamzaliev-1361a2210",
+    req: () => {
+      fetch("/linkedin", {
+        credentials: "include",
+      });
+    },
   },
   {
     first: "Facebook:",
     second: "facebook.com/gamzat.gamzaliev420",
     src: "img/facebook.png",
     link: "https://facebook.com/gamzat.gamzaliev420",
+    req: () => {
+      fetch("/facebook", {
+        credentials: "include",
+      });
+    },
   },
   {
     first: "Telegram:",
     second: "@gamzalievgamz",
     src: "img/telegram.png",
     link: "https://t.me/gamzalievgamz",
+    req: () => {
+      fetch("/telegram", {
+        credentials: "include",
+      });
+    },
   },
 ];
 
 export default function Contact() {
   const [status, setStatus] = useState("");
+
+  useEffect(() => {
+    fetch("/contact", {
+      credentials: "include",
+    });
+  }, []);
 
   const handleGetMessage = async (e) => {
     e.preventDefault();
@@ -82,7 +108,12 @@ export default function Contact() {
                 {!e.link ? (
                   <p className="text-information"> {e.second} </p>
                 ) : (
-                  <a href={e.link} className="text-information" target="_blank">
+                  <a
+                    onClick={e.req}
+                    href={e.link}
+                    className="text-information"
+                    target="_blank"
+                  >
                     {" "}
                     {e.second}{" "}
                   </a>

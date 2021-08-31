@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const { Telegraf } = require("telegraf");
 const path = require("path");
+const checkRouter = require("./routes/checkRouter");
 require("dotenv").config();
 
 const app = express();
@@ -23,6 +24,8 @@ const root = path.join(__dirname, "../", "client", "build");
 
 app.use(express.static(root));
 
+app.use("/", checkRouter);
+
 bot.use(async (ctx, next) => {
   try {
     await next();
@@ -33,31 +36,6 @@ bot.use(async (ctx, next) => {
 
 bot.start(async (ctx) => {
   ctx.reply("Система запущена");
-});
-
-app.get("/check", (req, res) => {
-  try {
-    bot.telegram.sendMessage(process.env.BOT_ID, "Ваш сайт посетили");
-    res.sendStatus(200);
-  } catch {
-    res.sendStatus(500);
-  }
-});
-
-app.post("/message", (req, res) => {
-  if (req.body.from && req.body.message) {
-    try {
-      bot.telegram.sendMessage(
-        process.env.BOT_ID,
-        `Сообщение! \n От: ${req.body.from} \n ${req.body.message}`
-      );
-      res.sendStatus(200);
-    } catch {
-      res.sendStatus(500);
-    }
-  } else {
-    res.sendStatus(400);
-  }
 });
 
 app.get("*", (req, res) => {
