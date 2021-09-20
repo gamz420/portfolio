@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const { Telegraf } = require("telegraf");
 const path = require("path");
+const mongoose = require("mongoose");
 const checkRouter = require("./routes/checkRouter");
 require("dotenv").config();
 
@@ -44,7 +45,13 @@ app.get("*", (req, res) => {
 
 app.listen(process.env.PORT, () => {
   console.log("Server App");
-  bot.launch();
+  mongoose.connect(process.env.MONGO_CONNECT, console.log("DB Started"));
+  try {
+    bot.launch();
+    console.log("Bot launch");
+  } catch (error) {
+    console.log("Bot not lounch", error);
+  }
 });
 
 module.exports = bot;
