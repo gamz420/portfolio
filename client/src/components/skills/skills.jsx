@@ -1,31 +1,50 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { change } from "../../redux/action/changeImg";
+import { Canvas, useThree } from "@react-three/fiber";
+import { FirstPersonControls } from "@react-three/drei";
+import * as THREE from "three";
 import "./style.css";
 
 export default function Skills() {
-  const dispatch = useDispatch();
-
   useEffect(() => {
-    dispatch(change("header-wraper2"));
     fetch("/checkskills", {
       credentials: "include",
     });
   }, []);
 
+  function SkyBox() {
+    const { scene } = useThree();
+    const loader = new THREE.CubeTextureLoader();
+    const texture = loader.load([
+      "1.jpg",
+      "2.jpg",
+      "3.jpg",
+      "4.jpg",
+      "5.jpg",
+      "6.jpg",
+    ]);
+    scene.background = texture;
+    return null;
+  }
+
   return (
-    <div className="skills">
-      <h1 className="skillstext">Технологии, с которыми я работал</h1>
-      <div>
-        <div className="front">
-          <h2>Front-end</h2>
-          <img src="img/front-end.png" alt="front" />
-        </div>
+    <>
+      <Canvas className="webgl">
+        <SkyBox />
+        <FirstPersonControls lookSpeed={0.05} />
+      </Canvas>
+      <div className="skills">
+        <h1 className="skillstext">Технологии, с которыми я работал</h1>
         <div>
-          <h2>Back-end</h2>
-          <img src="img/back-end.png" alt="back" />
+          <div className="front">
+            <h2>Front-end</h2>
+            <img src="img/front-end.png" alt="front" />
+          </div>
+          <div>
+            <h2>Back-end</h2>
+            <img src="img/back-end.png" alt="back" />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

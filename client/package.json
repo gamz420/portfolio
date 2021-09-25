@@ -6,6 +6,8 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.14",
+    "@react-three/drei": "^7.11.0",
+    "@react-three/fiber": "^7.0.7",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -18,6 +20,7 @@
     "react-scripts": "4.0.3",
     "react-typed": "^1.2.0",
     "redux-devtools-extension": "^2.13.9",
+    "three": "^0.132.2",
     "web-vitals": "^1.0.1"
   },
   "proxy": "https://gamzaliev.herokuapp.com",

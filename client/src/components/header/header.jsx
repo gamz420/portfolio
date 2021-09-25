@@ -1,10 +1,8 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import "./style.css";
 
 function Header() {
-  const state = useSelector((state) => state.class);
-  return <div className={state}></div>;
+  return <div className="header-wraper"></div>;
 }
 
 export default Header;
