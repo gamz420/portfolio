@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Canvas, useThree } from "@react-three/fiber";
-import { FirstPersonControls } from "@react-three/drei";
+import { FirstPersonControls, Loader } from "@react-three/drei";
 import * as THREE from "three";
 import "./style.css";
 
@@ -32,6 +32,7 @@ export default function Skills() {
         <SkyBox />
         <FirstPersonControls lookSpeed={0.05} />
       </Canvas>
+      <Loader />
       <div className="skills">
         <h1 className="skillstext">Технологии, с которыми я работал</h1>
         <div>
