@@ -1,17 +1,37 @@
 import React from "react";
 import logo from "../../img/image.png";
+import logoLight from "../../img/imageDark.png";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import { useSelector, useDispatch } from "react-redux";
+import { changeThemeAC } from "../../redux/action/changeThemeAC";
 import "./style.css";
 
 function Navbar() {
+  const dispatch = useDispatch();
+  const theme = useSelector((state) => state.theme);
+
+  const handleTheme = () => {
+    dispatch(changeThemeAC(!theme));
+    fetch("/changetheme", {
+      credentials: "include",
+    });
+  };
+
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-custom">
+      <nav
+        className={
+          !theme
+            ? "navbar navbar-expand-lg navbar-custom"
+            : "navbar navbar-expand-lg navbar-customLight"
+        }
+      >
         <div className="container">
-          <a className="navbar-brand" href="/">
-            <img className="logo" src={logo} alt="logo" />
-          </a>
+          <Link className="navbar-brand" to="/">
+            <img className="logo" src={!theme ? logo : logoLight} alt="logo" />
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -21,30 +41,71 @@ function Navbar() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <FontAwesomeIcon icon={faBars} style={{ color: "#fff" }} />
+            <FontAwesomeIcon
+              icon={faBars}
+              style={!theme ? { color: "#fff" } : { color: "#000" }}
+            />
           </button>
 
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <div
+            className="collapse navbar-collapse div-categories"
+            id="navbarSupportedContent"
+          >
             <ul className="navbar-nav ml-auto">
-              <li className="nav-item active">
-                <a className="nav-link" href="/">
+              <li>
+                <Link className={!theme ? "nav-link" : "nav-linkLight"} to="/">
                   Главная <span className="sr-only">(current)</span>
-                </a>
+                </Link>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/aboutme">
+              <li>
+                <Link
+                  className={!theme ? "nav-link" : "nav-linkLight"}
+                  to="/aboutme"
+                >
                   Обо мне
-                </a>
+                </Link>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/skills">
+              <li>
+                <Link
+                  className={!theme ? "nav-link" : "nav-linkLight"}
+                  to="/skills"
+                >
                   Технологии
-                </a>
+                </Link>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/contact">
+              <li>
+                <Link
+                  className={!theme ? "nav-link" : "nav-linkLight"}
+                  to="/contact"
+                >
                   Контакты
-                </a>
+                </Link>
+              </li>
+              <li className="liCheckbox">
+                <div>
+                  <input type="checkbox" class="checkbox" id="chk" />
+                  <label
+                    class="label"
+                    for="chk"
+                    onClick={() => {
+                      handleTheme();
+                    }}
+                  >
+                    <FontAwesomeIcon
+                      icon={faSun}
+                      style={{
+                        color: "#fff",
+                        marginRight: "3px",
+                        width: "10px",
+                      }}
+                    />
+                    <FontAwesomeIcon
+                      icon={faMoon}
+                      style={{ color: "#fff", width: "10px" }}
+                    />
+                    <div class="ball"></div>
+                  </label>
+                </div>
               </li>
             </ul>
           </div>

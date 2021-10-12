@@ -1,8 +1,12 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import Typed from "react-typed";
 import "./style.css";
 
 export default function Main() {
+  const theme = useSelector((state) => state.theme);
+
   useEffect(() => {
     fetch("/check", {
       credentials: "include",
@@ -18,17 +22,21 @@ export default function Main() {
   return (
     <div>
       <div className="main-info">
-        <h1>Gamzali Gamzaliev</h1>
+        <h1 className={!theme ? "name" : "nameLight"}>Gamzali Gamzaliev</h1>
         <Typed
-          className="typed-text"
+          className={!theme ? "typed-text" : "typed-textLight"}
           strings={["Freelancer", "Web developer"]}
           typeSpeed={40}
           backSpeed={60}
           loop
         />
-        <a onClick={handleEvent} href="/contact" className="btn-main-offer">
+        <Link
+          onClick={handleEvent}
+          to="/contact"
+          className={!theme ? "btn-main-offer" : "btn-main-offerLight"}
+        >
           Связаться со мной
-        </a>
+        </Link>
       </div>
     </div>
   );

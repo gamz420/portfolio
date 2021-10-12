@@ -7,4 +7,17 @@
   left: 0;
   height: 100%;
   width: 100%;
+  transition: 0.6s;
+}
+
+.header-wraperLight {
+  position: fixed;
+  background: url(../../img/69127555-keyboard-wallpapers.jpg) no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transition: 0.6s;
 }

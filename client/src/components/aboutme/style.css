@@ -11,8 +11,9 @@
   z-index: 1;
 }
 
-.aboutme > div {
+.card {
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
   align-items: center;
   text-align: center;
@@ -21,6 +22,21 @@
   color: white;
   background: rgba(0, 0, 0, 0.781);
   text-shadow: 0px 0px 10px black;
+  transition: 0.3s;
+}
+
+.cardLight {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  width: 90vw;
+  height: 80vh;
+  color: black;
+  background: rgba(129, 129, 129, 0.527);
+  text-shadow: 0px 0px 10px white;
+  transition: 0.3s;
 }
 
 .info-text {
@@ -33,7 +49,11 @@
 }
 
 @media (max-width: 1211px) {
-  .aboutme > div {
+  .card {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .cardLight {
     flex-direction: column;
     justify-content: center;
   }
@@ -47,7 +67,11 @@
 }
 
 @media (max-width: 855px) {
-  .aboutme > div {
+  .card {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .cardLight {
     flex-direction: column;
     justify-content: center;
   }
@@ -57,7 +81,12 @@
 }
 
 @media (max-width: 380px) {
-  .aboutme > div {
+  .card {
+    overflow: auto;
+    text-overflow: ellipsis;
+    white-space: normal;
+  }
+  .cardLight {
     overflow: auto;
     text-overflow: ellipsis;
     white-space: normal;
@@ -69,7 +98,14 @@
 }
 
 @media (max-width: 320px) {
-  .aboutme > div {
+  .card {
+    height: 100%;
+    padding-top: 40%;
+    overflow: auto;
+    text-overflow: ellipsis;
+    white-space: normal;
+  }
+  .cardLight {
     height: 100%;
     padding-top: 40%;
     overflow: auto;
@@ -82,7 +118,13 @@
 }
 
 @media (max-height: 520px) {
-  .aboutme > div {
+  .card {
+    height: 100%;
+    overflow: auto;
+    text-overflow: ellipsis;
+    white-space: normal;
+  }
+  .cardLight {
     height: 100%;
     overflow: auto;
     text-overflow: ellipsis;
@@ -94,7 +136,14 @@
 }
 
 @media (max-height: 280px) {
-  .aboutme > div {
+  .card {
+    height: 100%;
+    padding-top: 30%;
+    overflow: auto;
+    text-overflow: ellipsis;
+    white-space: normal;
+  }
+  .cardLight {
     height: 100%;
     padding-top: 30%;
     overflow: auto;

@@ -1,5 +1,5 @@
 const initState = {
-  class: "header-wraper",
+  theme: false,
 };
 
 export default initState;

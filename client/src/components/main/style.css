@@ -13,11 +13,20 @@
   z-index: 1;
 }
 
-.main-info h1 {
+.name {
   color: white;
   text-transform: uppercase;
   margin-bottom: 1%;
   font-size: calc(20px + (30 - 20) * ((100vw - 320px) / (1200 - 320)));
+  transition: 0.3s;
+}
+
+.nameLight {
+  color: black;
+  text-transform: uppercase;
+  margin-bottom: 1%;
+  font-size: calc(20px + (30 - 20) * ((100vw - 320px) / (1200 - 320)));
+  transition: 0.3s;
 }
 
 /*TYPED TEXT*/
@@ -25,6 +34,13 @@
 .typed-text {
   font-size: calc(20px + (26 - 20) * ((100vw - 320px) / (1200 - 320)));
   color: white;
+  transition: 0.3s;
+}
+
+.typed-textLight {
+  font-size: calc(20px + (26 - 20) * ((100vw - 320px) / (1200 - 320)));
+  color: black;
+  transition: 0.3s;
 }
 
 /*Header button*/
@@ -41,8 +57,26 @@
   transition: 0.3s;
 }
 
+.btn-main-offerLight {
+  font-size: calc(
+    13px + (22 - 20) * ((100vw - 320px) / (1200 - 320))
+  ) !important;
+  border: 1px solid black;
+  text-transform: uppercase;
+  padding: calc(5px + (25 - 20) * ((100vw - 320px) / (1200 - 320)));
+  color: black;
+  margin: calc(10px + (30 - 20) * ((100vw - 320px) / (1200 - 320)));
+  transition: 0.3s;
+}
+
 .btn-main-offer:hover {
   text-decoration: none;
   background-color: white;
   color: black;
+}
+
+.btn-main-offerLight:hover {
+  text-decoration: none;
+  background-color: black;
+  color: white;
 }

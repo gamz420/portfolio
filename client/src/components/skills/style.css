@@ -17,6 +17,27 @@
   color: white;
   overflow: hidden;
   text-shadow: 0 0 10px black;
+  transition: 0.3s;
+}
+
+.skillsLight {
+  margin-top: 90px;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+  pointer-events: none;
+  color: black;
+  overflow: hidden;
+  text-shadow: 0 0 10px white;
+  transition: 0.3s;
 }
 
 .skills > div {
@@ -34,14 +55,43 @@
   align-items: center;
 }
 
-.skills > div div img {
+.skillsLight > div {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 90%;
+}
+
+.skillsLight > div div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.skillsLogo {
   width: 60%;
   filter: drop-shadow(0 0 1px white);
   z-index: 1;
+  transition: 0.3s;
+}
+
+.skillsLogoLight {
+  width: 60%;
+  filter: drop-shadow(0 0 1px black);
+  z-index: 1;
+  transition: 0.3s;
 }
 
 .front {
   border-right: solid 3px white;
+  transition: 0.3s;
+}
+
+.frontLight {
+  border-right: solid 3px black;
+  transition: 0.3s;
 }
 
 .webgl {
@@ -59,8 +109,17 @@
     width: 70vw;
     height: 90%;
   }
+  .skillsLight > div {
+    flex-direction: column;
+    width: 70vw;
+    height: 90%;
+  }
   .front {
     border-bottom: solid 3px white;
+    border-right: solid 0px black;
+  }
+  .frontLight {
+    border-bottom: solid 3px black;
     border-right: solid 0px black;
   }
 }
@@ -69,10 +128,16 @@
   .skills > div {
     width: 80vw;
   }
+  .skillsLight > div {
+    width: 80vw;
+  }
 }
 
 @media (max-width: 550px) {
   .skills > div {
+    width: 110vw;
+  }
+  .skillsLight > div {
     width: 110vw;
   }
   .skillstext {
@@ -82,6 +147,9 @@
 
 @media (max-width: 450px) {
   .skills > div {
+    width: 110vw;
+  }
+  .skillsLight > div {
     width: 110vw;
   }
   .skillstext {
@@ -94,6 +162,10 @@
     width: 80vw;
     height: 90%;
   }
+  .skillsLight > div {
+    width: 80vw;
+    height: 90%;
+  }
   .skillstext {
     font-size: 25px;
   }
@@ -101,10 +173,18 @@
     border-bottom: solid 2px white;
     border-right: solid 0px black;
   }
+  .frontLight {
+    border-bottom: solid 2px black;
+    border-right: solid 0px black;
+  }
 }
 
 @media (max-height: 670px) {
   .skills > div {
+    width: 100vw;
+    height: 90%;
+  }
+  .skillsLight > div {
     width: 100vw;
     height: 90%;
   }
@@ -115,10 +195,19 @@
     border-bottom: solid 2px white;
     border-right: solid 0px black;
   }
+  .frontLight {
+    border-bottom: solid 2px black;
+    border-right: solid 0px black;
+  }
 }
 
 @media (max-height: 520px) {
   .skills > div {
+    flex-direction: row;
+    width: 110vw;
+    height: 90%;
+  }
+  .skillsLight > div {
     flex-direction: row;
     width: 110vw;
     height: 90%;
@@ -130,10 +219,19 @@
     border-bottom: solid 0px black;
     border-right: solid 2px white;
   }
+  .frontLight {
+    border-bottom: solid 0px black;
+    border-right: solid 2px black;
+  }
 }
 
 @media (max-height: 450px) {
   .skills > div {
+    flex-direction: row;
+    width: 50vw;
+    height: 90%;
+  }
+  .skillsLight > div {
     flex-direction: row;
     width: 50vw;
     height: 90%;
@@ -144,5 +242,9 @@
   .front {
     border-bottom: solid 0px black;
     border-right: solid 2px white;
+  }
+  .frontLight {
+    border-bottom: solid 0px black;
+    border-right: solid 2px black;
   }
 }

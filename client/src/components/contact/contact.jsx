@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import "./style.css";
 
 let list = [
@@ -65,6 +66,7 @@ let list = [
 
 export default function Contact() {
   const [status, setStatus] = useState("");
+  const theme = useSelector((state) => state.theme);
 
   useEffect(() => {
     fetch("/checkcontact", {
@@ -95,23 +97,36 @@ export default function Contact() {
   };
 
   return (
-    <div className="contact">
+    <div className={!theme ? "contact" : "contactLight"}>
       <div className="contacts-info">
         <div className="contacts-div">
           {list.map((e) => (
             <div key={e.second} className="item">
               <div className="img-div">
-                <img className="icon" src={e.src} alt={e.first} />
+                <img
+                  className={!theme ? "icon" : "iconLight"}
+                  src={e.src}
+                  alt={e.first}
+                />
               </div>
-              <div className="text">
+              <div className={!theme ? "text" : "textLight"}>
                 <p className="text-header"> {e.first} </p>
                 {!e.link ? (
-                  <p className="text-information"> {e.second} </p>
+                  <p
+                    className={
+                      !theme ? "text-information" : "text-informationLight"
+                    }
+                  >
+                    {" "}
+                    {e.second}{" "}
+                  </p>
                 ) : (
                   <a
                     onClick={e.req}
                     href={e.link}
-                    className="text-information"
+                    className={
+                      !theme ? "text-information" : "text-informationLight"
+                    }
                     target="_blank"
                   >
                     {" "}
@@ -127,15 +142,32 @@ export default function Contact() {
         <h2>ОТПРАВЬТЕ МНЕ СООБЩЕНИЕ</h2>
         <form onSubmit={handleGetMessage} className="form">
           <span>{status}</span>
-          <label className="label-form" htmlFor="">
+          <label
+            className={!theme ? "label-form" : "label-formLight"}
+            htmlFor=""
+          >
             ОТ КОГО
           </label>
-          <input name="from" className="input-form" type="text" />
-          <label className="label-form" htmlFor="">
+          <input
+            name="from"
+            className={!theme ? "input-form" : "input-formLight"}
+            type="text"
+          />
+          <label
+            className={!theme ? "label-form" : "label-formLight"}
+            htmlFor=""
+          >
             СООБЩЕНИЕ
           </label>
-          <textarea name="message" className="input-form-message" />
-          <button className="button-form">ОТПРАВИТЬ</button>
+          <textarea
+            name="message"
+            className={
+              !theme ? "input-form-message" : "input-form-messageLight"
+            }
+          />
+          <button className={!theme ? "button-form" : "button-formLight"}>
+            ОТПРАВИТЬ
+          </button>
         </form>
       </div>
     </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import "./App.css";
 import Navbar from "./components/navbar/navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -11,11 +12,23 @@ import Skills from "./components/skills/skills";
 import Contact from "./components/contact/contact";
 
 function App() {
+  const theme = useSelector((state) => state.theme);
+
   return (
     <div className="App">
       <Particles
         params={{
           particles: {
+            color: {
+              value: !theme ? "#ffffff" : "#000000",
+            },
+            links: {
+              color: !theme ? "#ffffff" : "#000000",
+              distance: 150,
+              enable: true,
+              opacity: 0.5,
+              width: 1,
+            },
             number: {
               value: 30,
               density: {
@@ -23,11 +36,12 @@ function App() {
                 value_area: 900,
               },
             },
+
             shape: {
               type: "circle",
               stroke: {
                 width: 1,
-                color: "#ffffff",
+                color: !theme ? "#ffffff" : "#000000",
               },
             },
           },
@@ -109,9 +123,9 @@ function App() {
           retina_detect: false,
         }}
       /> */}
-      <Navbar />
-      <Header />
       <Router>
+        <Navbar />
+        <Header />
         <Switch>
           <Route exact path="/">
             <Main />

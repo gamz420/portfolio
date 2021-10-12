@@ -14,6 +14,7 @@ const statisticsSchema = new Schema({
   clickFacebook: Number,
   clickTelegram: Number,
   sendMessage: Number,
+  changeTheme: Number,
 });
 
 module.exports = model("statistics", statisticsSchema);

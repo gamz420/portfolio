@@ -1,8 +1,8 @@
 import { createStore } from "redux";
 import initState from "./initState";
-import changeImg from "./reducer/changeImgReducer";
-import {composeWithDevTools} from 'redux-devtools-extension'
+import changeTheme from "./reducer/changeThemeReducer";
+import { composeWithDevTools } from "redux-devtools-extension";
 
-const store = createStore(changeImg, initState, composeWithDevTools());
+const store = createStore(changeTheme, initState, composeWithDevTools());
 
 export default store;
