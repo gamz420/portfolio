@@ -7,6 +7,7 @@ import "./style.css";
 
 export default function Skills() {
   const theme = useSelector((state) => state.theme);
+  const language = useSelector((state) => state.language);
 
   useEffect(() => {
     fetch("/checkskills", {
@@ -48,7 +49,11 @@ export default function Skills() {
         dataInterpolation={(p) => `Загрузка ${p.toFixed(2)}%`}
       />
       <div className={!theme ? "skills" : "skillsLight"}>
-        <h1 className="skillstext">Технологии, с которыми я работал</h1>
+        <h1 className="skillstext">
+          {!language
+            ? "Технологии, с которыми я работал"
+            : "Technologies I have worked with"}
+        </h1>
         <div>
           <div className={!theme ? "front" : "frontLight"}>
             <h2>Front-end</h2>

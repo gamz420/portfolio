@@ -1,20 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../img/image.png";
 import logoLight from "../../img/imageDark.png";
+import lang from "../../img/langWhite.png";
+import langLight from "../../img/langBlack.png";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { useSelector, useDispatch } from "react-redux";
-import { changeThemeAC } from "../../redux/action/changeThemeAC";
+import { changeAC } from "../../redux/action/changeAC";
 import "./style.css";
 
 function Navbar() {
   const dispatch = useDispatch();
   const theme = useSelector((state) => state.theme);
+  const language = useSelector((state) => state.language);
+  const [styleLangBar, setStyleLangBar] = useState(true);
 
   const handleTheme = () => {
-    dispatch(changeThemeAC(!theme));
+    dispatch(changeAC(!theme, "theme"));
     fetch("/changetheme", {
+      credentials: "include",
+    });
+  };
+
+  const handleLanguageBar = () => {
+    setStyleLangBar(!styleLangBar);
+  };
+
+  const handleChangeLanguage = (bool) => {
+    dispatch(changeAC(bool, "language"));
+    fetch("/changelanguage", {
       credentials: "include",
     });
   };
@@ -54,7 +69,8 @@ function Navbar() {
             <ul className="navbar-nav ml-auto">
               <li>
                 <Link className={!theme ? "nav-link" : "nav-linkLight"} to="/">
-                  Главная <span className="sr-only">(current)</span>
+                  {!language ? "Главная" : "HOME"}
+                  <span className="sr-only">(current)</span>
                 </Link>
               </li>
               <li>
@@ -62,7 +78,7 @@ function Navbar() {
                   className={!theme ? "nav-link" : "nav-linkLight"}
                   to="/aboutme"
                 >
-                  Обо мне
+                  {!language ? "Обо мне" : "About me"}
                 </Link>
               </li>
               <li>
@@ -70,7 +86,7 @@ function Navbar() {
                   className={!theme ? "nav-link" : "nav-linkLight"}
                   to="/skills"
                 >
-                  Технологии
+                  {!language ? "Технологии" : "Technologies"}
                 </Link>
               </li>
               <li>
@@ -78,7 +94,7 @@ function Navbar() {
                   className={!theme ? "nav-link" : "nav-linkLight"}
                   to="/contact"
                 >
-                  Контакты
+                  {!language ? "Контакты" : "Contacts"}
                 </Link>
               </li>
               <li className="liCheckbox">
@@ -105,6 +121,44 @@ function Navbar() {
                     />
                     <div class="ball"></div>
                   </label>
+                </div>
+              </li>
+              <li className="langBox">
+                <img
+                  className={!theme ? "langLogo" : "langLogoLight"}
+                  src={!theme ? lang : langLight}
+                  alt="language"
+                  onClick={() => {
+                    handleLanguageBar();
+                  }}
+                />
+                <div
+                  className={
+                    styleLangBar
+                      ? !theme
+                        ? "langContainer"
+                        : "langContainerLight"
+                      : !theme
+                      ? "langContainerVisible"
+                      : "langContainerVisibleLight"
+                  }
+                >
+                  <p
+                    className={!theme ? "langType" : "langTypeLight"}
+                    onClick={() => {
+                      handleChangeLanguage(false);
+                    }}
+                  >
+                    {language ? "RU" : <u>RU</u>}
+                  </p>
+                  <p
+                    className={!theme ? "langType" : "langTypeLight"}
+                    onClick={() => {
+                      handleChangeLanguage(true);
+                    }}
+                  >
+                    {!language ? "EN" : <u>EN</u>}
+                  </p>
                 </div>
               </li>
             </ul>

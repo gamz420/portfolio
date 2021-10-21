@@ -80,6 +80,7 @@ nav ul li {
   padding-left: 18px !important;
   padding-top: 10px;
   padding-bottom: 10px;
+  padding-right: 23px;
   height: 100%;
   width: 100%;
   display: flex;
@@ -122,6 +123,115 @@ nav ul li {
   transform: translateX(16px);
 }
 
+.langLogo {
+  height: 25px;
+  width: 25px;
+  transition: 0.3s;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.langLogoLight {
+  height: 25px;
+  width: 25px;
+  transition: 0.3s;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.langContainer {
+  transition: 0.3s ease;
+  position: absolute;
+  background-color: black;
+  margin-top: 50px;
+  margin-left: -2.5px;
+  opacity: 0;
+  width: 30px;
+  height: 70px;
+  border-radius: 20px;
+}
+
+.langContainerLight {
+  transition: 0.3s ease;
+  position: absolute;
+  background-color: #8080803f;
+  margin-left: -2.5px;
+  opacity: 0;
+  width: 30px;
+  margin-top: 35px;
+  border-radius: 20px;
+}
+
+.langContainerVisible {
+  transition: 0.3s linear;
+  position: absolute;
+  background-color: black;
+  margin-left: -2.5px;
+  opacity: 1;
+  width: 30px;
+  height: 70px;
+  border-radius: 20px;
+  transform: translateY(60px);
+}
+
+.langContainerVisibleLight {
+  transition: 0.3s linear;
+  position: absolute;
+  background-color: #8080803f;
+  margin-left: -2.5px;
+  opacity: 1;
+  width: 30px;
+  padding-top: 35px;
+  border-radius: 20px;
+  transform: translateY(35px);
+}
+
+.langType {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.langTypeLight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.langType:hover {
+  color: gray;
+}
+
+.langTypeLight:hover {
+  color: gray;
+}
+
+.langLogo:hover {
+  filter: drop-shadow(0 0 1px white);
+}
+
+.langLogoLight:hover {
+  filter: drop-shadow(0 0 1px black);
+}
+
+.langBox {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 12px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transition: 0.3s;
+}
+
 @media (min-width: 1200px) {
   .container,
   .container-lg,
@@ -129,7 +239,7 @@ nav ul li {
   .container-sm,
   .container-xl {
     max-width: 100% !important;
-    padding-left: 15% !important;
-    padding-right: 15% !important;
+    padding-left: 12% !important;
+    padding-right: 12% !important;
   }
 }

@@ -6,6 +6,7 @@ import "./style.css";
 
 export default function Main() {
   const theme = useSelector((state) => state.theme);
+  const language = useSelector((state) => state.language);
 
   useEffect(() => {
     fetch("/check", {
@@ -35,7 +36,7 @@ export default function Main() {
           to="/contact"
           className={!theme ? "btn-main-offer" : "btn-main-offerLight"}
         >
-          Связаться со мной
+          {!language ? "Связаться со мной" : "Contact with me"}
         </Link>
       </div>
     </div>

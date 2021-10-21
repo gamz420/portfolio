@@ -2,71 +2,72 @@ import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import "./style.css";
 
-let list = [
-  {
-    first: "Имя:",
-    second: "Гамзалиев Гамзали",
-    src: "img/icon-human-21.jpg",
-  },
-  {
-    first: "Страна, Город:",
-    second: "Россия, Москва",
-    src: "img/gps.png",
-  },
-  {
-    first: "Почта:",
-    second: "gamzalievgamz@gmail.com",
-    src: "img/mail.png",
-  },
-  {
-    first: "Github:",
-    second: "github.com/gamz420",
-    src: "img/github_PNG83.png",
-    link: "https://github.com/gamz420",
-    req: () => {
-      fetch("/github", {
-        credentials: "include",
-      });
-    },
-  },
-  {
-    first: "Linkedin:",
-    second: "linkedin.com/in/gamzali-gamzaliev-1361a2210",
-    src: "img/linkedin.png",
-    link: "https://linkedin.com/in/gamzali-gamzaliev-1361a2210",
-    req: () => {
-      fetch("/linkedin", {
-        credentials: "include",
-      });
-    },
-  },
-  {
-    first: "Facebook:",
-    second: "facebook.com/gamzat.gamzaliev420",
-    src: "img/facebook.png",
-    link: "https://facebook.com/gamzat.gamzaliev420",
-    req: () => {
-      fetch("/facebook", {
-        credentials: "include",
-      });
-    },
-  },
-  {
-    first: "Telegram:",
-    second: "@gamzalievgamz",
-    src: "img/telegram.png",
-    link: "https://t.me/gamzalievgamz",
-    req: () => {
-      fetch("/telegram", {
-        credentials: "include",
-      });
-    },
-  },
-];
-
 export default function Contact() {
   const [status, setStatus] = useState("");
   const theme = useSelector((state) => state.theme);
+  const language = useSelector((state) => state.language);
+
+  let list = [
+    {
+      first: !language ? "Имя:" : "Name:",
+      second: !language ? "Гамзалиев Гамзали" : "Gamzaliev Gamzali",
+      src: "img/icon-human-21.jpg",
+    },
+    {
+      first: !language ? "Страна, Город:" : "Country, City:",
+      second: !language ? "Россия, Москва" : "Russia, Moscow",
+      src: "img/gps.png",
+    },
+    {
+      first: !language ? "Почта:" : "Mail:",
+      second: "gamzalievgamz@gmail.com",
+      src: "img/mail.png",
+    },
+    {
+      first: "Github:",
+      second: "github.com/gamz420",
+      src: "img/github_PNG83.png",
+      link: "https://github.com/gamz420",
+      req: () => {
+        fetch("/github", {
+          credentials: "include",
+        });
+      },
+    },
+    {
+      first: "Linkedin:",
+      second: "linkedin.com/in/gamzali-gamzaliev-1361a2210",
+      src: "img/linkedin.png",
+      link: "https://linkedin.com/in/gamzali-gamzaliev-1361a2210",
+      req: () => {
+        fetch("/linkedin", {
+          credentials: "include",
+        });
+      },
+    },
+    {
+      first: "Facebook:",
+      second: "facebook.com/gamzat.gamzaliev420",
+      src: "img/facebook.png",
+      link: "https://facebook.com/gamzat.gamzaliev420",
+      req: () => {
+        fetch("/facebook", {
+          credentials: "include",
+        });
+      },
+    },
+    {
+      first: "Telegram:",
+      second: "@gamzalievgamz",
+      src: "img/telegram.png",
+      link: "https://t.me/gamzalievgamz",
+      req: () => {
+        fetch("/telegram", {
+          credentials: "include",
+        });
+      },
+    },
+  ];
 
   useEffect(() => {
     fetch("/checkcontact", {
@@ -90,9 +91,11 @@ export default function Contact() {
       });
       e.target.from.value = "";
       e.target.message.value = "";
-      setStatus("Сообщение отправлено, спасибо");
+      setStatus(
+        !language ? "Сообщение отправлено, спасибо" : "Message sent, thank you"
+      );
     } else {
-      setStatus("Заполните все поля");
+      setStatus(!language ? "Заполните все поля" : "Fill in all the fields");
     }
   };
 
@@ -139,14 +142,14 @@ export default function Contact() {
         </div>
       </div>
       <div className="contacts-form">
-        <h2>ОТПРАВЬТЕ МНЕ СООБЩЕНИЕ</h2>
+        <h2>{!language ? "ОТПРАВЬТЕ МНЕ СООБЩЕНИЕ" : "SEND ME A MESSAGE"}</h2>
         <form onSubmit={handleGetMessage} className="form">
           <span>{status}</span>
           <label
             className={!theme ? "label-form" : "label-formLight"}
             htmlFor=""
           >
-            ОТ КОГО
+            {!language ? "ОТ КОГО" : "FROM WHOM"}
           </label>
           <input
             name="from"
@@ -157,7 +160,7 @@ export default function Contact() {
             className={!theme ? "label-form" : "label-formLight"}
             htmlFor=""
           >
-            СООБЩЕНИЕ
+            {!language ? "СООБЩЕНИЕ" : "MESSAGE"}
           </label>
           <textarea
             name="message"
@@ -166,7 +169,7 @@ export default function Contact() {
             }
           />
           <button className={!theme ? "button-form" : "button-formLight"}>
-            ОТПРАВИТЬ
+            {!language ? "ОТПРАВИТЬ" : "SEND"}
           </button>
         </form>
       </div>

@@ -15,6 +15,7 @@ const statisticsSchema = new Schema({
   clickTelegram: Number,
   sendMessage: Number,
   changeTheme: Number,
+  changeLanguage: Number,
 });
 
 module.exports = model("statistics", statisticsSchema);

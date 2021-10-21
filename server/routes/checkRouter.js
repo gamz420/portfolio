@@ -31,6 +31,19 @@ router.get("/changetheme", async (req, res) => {
   }
 });
 
+router.get("/changelanguage", async (req, res) => {
+  try {
+    const statistic = await Statistics.findOne();
+    statistic.changeLanguage += 1;
+    statistic.save();
+    bot.telegram.sendMessage(process.env.BOT_ID, "Сменили язык");
+    res.sendStatus(200);
+  } catch (error) {
+    console.log(error);
+    res.sendStatus(500);
+  }
+});
+
 router.get("/buttoncontact", async (req, res) => {
   try {
     const statistic = await Statistics.findOne();
