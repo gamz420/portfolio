@@ -36,7 +36,7 @@ export default function Main() {
           to="/contact"
           className={!theme ? "btn-main-offer" : "btn-main-offerLight"}
         >
-          {!language ? "Связаться со мной" : "Contact with me"}
+          {!language ? "Связаться со мной" : "Contact me"}
         </Link>
       </div>
     </div>

@@ -149,7 +149,7 @@ export default function Contact() {
             className={!theme ? "label-form" : "label-formLight"}
             htmlFor=""
           >
-            {!language ? "ОТ КОГО" : "FROM WHOM"}
+            {!language ? "ОТ КОГО" : "SENDER"}
           </label>
           <input
             name="from"

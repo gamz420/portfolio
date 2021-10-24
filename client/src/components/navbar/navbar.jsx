@@ -29,6 +29,7 @@ function Navbar() {
 
   const handleChangeLanguage = (bool) => {
     dispatch(changeAC(bool, "language"));
+    setStyleLangBar(!styleLangBar);
     fetch("/changelanguage", {
       credentials: "include",
     });
