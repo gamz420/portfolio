@@ -232,6 +232,10 @@ nav ul li {
   transition: 0.3s;
 }
 
+.hide {
+  display: none !important;
+}
+
 @media (min-width: 1200px) {
   .container,
   .container-lg,

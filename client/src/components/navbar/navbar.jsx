@@ -15,6 +15,7 @@ function Navbar() {
   const theme = useSelector((state) => state.theme);
   const language = useSelector((state) => state.language);
   const [styleLangBar, setStyleLangBar] = useState(true);
+  const [barShow, setBarShow] = useState(false);
 
   const handleTheme = () => {
     dispatch(changeAC(!theme, "theme"));
@@ -49,6 +50,7 @@ function Navbar() {
             <img className="logo" src={!theme ? logo : logoLight} alt="logo" />
           </Link>
           <button
+            onClick={() => setBarShow(true)}
             className="navbar-toggler"
             type="button"
             data-toggle="collapse"
@@ -64,17 +66,19 @@ function Navbar() {
           </button>
 
           <div
-            className="collapse navbar-collapse div-categories"
+            className={`navbar-collapse div-categories collapse ${
+              barShow ? "" : "hide"
+            }`}
             id="navbarSupportedContent"
           >
             <ul className="navbar-nav ml-auto">
-              <li>
+              <li onClick={() => setBarShow(false)}>
                 <Link className={!theme ? "nav-link" : "nav-linkLight"} to="/">
                   {!language ? "Главная" : "HOME"}
                   <span className="sr-only">(current)</span>
                 </Link>
               </li>
-              <li>
+              <li onClick={() => setBarShow(false)}>
                 <Link
                   className={!theme ? "nav-link" : "nav-linkLight"}
                   to="/aboutme"
@@ -82,7 +86,7 @@ function Navbar() {
                   {!language ? "Обо мне" : "About me"}
                 </Link>
               </li>
-              <li>
+              <li onClick={() => setBarShow(false)}>
                 <Link
                   className={!theme ? "nav-link" : "nav-linkLight"}
                   to="/skills"
@@ -90,7 +94,7 @@ function Navbar() {
                   {!language ? "Технологии" : "Technologies"}
                 </Link>
               </li>
-              <li>
+              <li onClick={() => setBarShow(false)}>
                 <Link
                   className={!theme ? "nav-link" : "nav-linkLight"}
                   to="/contact"
