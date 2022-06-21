@@ -45,17 +45,17 @@ export default function Contact() {
         });
       },
     },
-    {
-      first: "Facebook:",
-      second: "facebook.com/gamzat.gamzaliev420",
-      src: "img/facebook.png",
-      link: "https://facebook.com/gamzat.gamzaliev420",
-      req: () => {
-        fetch("/facebook", {
-          credentials: "include",
-        });
-      },
-    },
+    // {
+    //   first: "Facebook:",
+    //   second: "facebook.com/gamzat.gamzaliev420",
+    //   src: "img/facebook.png",
+    //   link: "https://facebook.com/gamzat.gamzaliev420",
+    //   req: () => {
+    //     fetch("/facebook", {
+    //       credentials: "include",
+    //     });
+    //   },
+    // },
     {
       first: "Telegram:",
       second: "@gamzalievgamz",
